@@ -13,13 +13,24 @@
     align-items: center;
     font-size: 1.1em;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     & :nth-child(n + 2) {
       margin-left: 20px;
     }
   }
 
   &__content {
+    border: 1px solid rgb(0, 153, 255);
+    border-radius: 5px;
+    padding: 5px;
     margin-top: 20px;
     font-size: 2em;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

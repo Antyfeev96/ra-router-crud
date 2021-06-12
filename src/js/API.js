@@ -12,5 +12,19 @@ export default class API {
       console.log(error);
     }
   }
+
+  async addMessage(id, content) {
+    try {
+      await fetch(`${this.url}/posts`, {
+        method: 'POST',
+        body: JSON.stringify({
+          id,
+          content,
+        })
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
 };
