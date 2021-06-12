@@ -1,16 +1,16 @@
-import './NewPost.scss';
+import './NewPostButton.scss';
 import React from 'react'
 import PropTypes from 'prop-types'
 import NewPostLink from '../NewPostLink/NewPostLink'
 
-export default function NewPost(props) {
+export default function NewPostButton(props) {
   return (
-    <div className="new-post">
+    <div className="new-post-button">
       <NewPostLink />
     </div>
   )
 }
 
-NewPost.propTypes = {
+NewPostButton.propTypes = {
 
 }
