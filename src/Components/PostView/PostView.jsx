@@ -24,7 +24,7 @@ export default function PostView({ match }) {
         <PreviousPageButton />
       </Post>
       <div className="post__buttons">
-        <Link to={`../edit/${post.id}`} className="post__button post__button_edit">Изменить</Link>
+        <Link to={`./edit/${post.id}`} className="post__button post__button_edit">Изменить</Link>
         <Link to='../../' onClick={() => deletePost(post.id)} className="post__button post__button_delete">Удалить</Link>
       </div>
     </div>

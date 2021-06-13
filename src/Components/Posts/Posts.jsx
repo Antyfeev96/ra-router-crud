@@ -8,7 +8,7 @@ export default function Posts() {
   const posts = useContext(PostsContext).data.posts
   return (
       <div className="posts">
-        {posts.map((post) => <Link key={post.id} to={`/posts/${post.id}`}><Post {...post} /></Link>)}
+        {posts.map((post) => <Link key={post.id} to={`./posts/${post.id}`}><Post {...post} /></Link>)}
       </div>
   )
 }
