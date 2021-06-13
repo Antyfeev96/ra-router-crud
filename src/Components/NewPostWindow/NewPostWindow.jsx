@@ -1,18 +1,13 @@
 import './NewPostWindow.scss';
-import React, { useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
 import CreateForm from '../CreateForm/CreateForm';
+import PreviousPageButton from '../PreviousPageButton/PreviousPageButton';
 
-export default function NewPostWindow(props) {
+export default function NewPostWindow() {
   return (
     <div className="new-post-window">
-      <Link className="new-post-window__exit" to='../'>
-        <FontAwesomeIcon icon={faTimes} size='2x' />
-      </Link>
-      <CreateForm {...props} />
+      <PreviousPageButton />
+      <CreateForm />
     </div>
   )
 }

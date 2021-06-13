@@ -1,13 +1,14 @@
 import './CreateForm.scss';
-import React, { useEffect, useRef, } from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext, useRef } from 'react'
 import API from '../../js/API';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PostsContext from '../PostsContext/PostsContext';
 
 const api = new API();
 
-export default function CreateForm(props) {
-  const { nextId, fetchPosts } = props;
+export default function CreateForm() {
+  const fetchPosts = useContext(PostsContext).fetchPosts;
+  const { nextId } = useContext(PostsContext).data; 
   const inputRef = useRef();
 
   const sendMessage = async () => {
@@ -21,8 +22,4 @@ export default function CreateForm(props) {
       <Link className="form__link" to='../' onClick={() => sendMessage()}>Опубликовать</Link>
     </form>
   )
-}
-
-CreateForm.propTypes = {
-
 }

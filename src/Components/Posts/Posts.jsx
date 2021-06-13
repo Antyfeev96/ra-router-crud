@@ -1,19 +1,14 @@
-import './Posts.scss';
-import React from 'react'
+import './Posts.scss'
+import React, { useContext } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import PropTypes from 'prop-types'
 import Post from '../Post/Post'
+import PostsContext from '../PostsContext/PostsContext';
 
-export default function Posts(props) {
-  const { posts } = props;
-
+export default function Posts() {
+  const posts = useContext(PostsContext).data.posts
   return (
-    <div className="posts">
-      {posts.map((post) => <Link to={`/posts/${post.id}`}><Post key={post.id} {...post} /></Link>)}
-    </div>
+      <div className="posts">
+        {posts.map((post) => <Link key={post.id} to={`/posts/${post.id}`}><Post {...post} /></Link>)}
+      </div>
   )
-}
-
-Posts.propTypes = {
-
 }
