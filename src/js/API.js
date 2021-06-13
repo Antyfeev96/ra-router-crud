@@ -26,5 +26,18 @@ export default class API {
       console.log(error);
     }
   }
+
+  async deleteMessage(id) {
+    try {
+      await fetch(`${this.url}/posts/${id}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          id,
+        })
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
 };

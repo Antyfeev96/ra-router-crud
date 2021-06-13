@@ -4,11 +4,21 @@ import PropTypes from 'prop-types'
 import Post from '../Post/Post'
 import PostsContext from '../PostsContext/PostsContext';
 import PreviousPageButton from '../PreviousPageButton/PreviousPageButton';
+import API from '../../js/API';
+import { Link } from 'react-router-dom';
+
+const api = new API();
 
 export default function PostView({ match }) {
   const { posts } = useContext(PostsContext).data;
+  const { fetchPosts } = useContext(PostsContext);
   const post = posts.find(post => post.id === +match.params.id);
-  console.log(match.params);
+  
+  const deletePost = async (id) => {
+    await api.deleteMessage(id);
+    await fetchPosts();
+  }
+
   return (
     <div>
       <Post {...post}>
@@ -16,7 +26,7 @@ export default function PostView({ match }) {
       </Post>
       <div className="post__buttons">
         <button className="post__button post__button_edit">Изменить</button>
-        <button className="post__button post__button_delete">Удалить</button>
+        <Link to='../../' onClick={() => deletePost(post.id)} className="post__button post__button_delete">Удалить</Link>
       </div>
     </div>
   )
