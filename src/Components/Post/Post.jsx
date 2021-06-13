@@ -36,7 +36,7 @@ export default function Post(props) {
       {match ? (
         <React.Fragment>
           <input ref={inputRef} className='post__content' defaultValue={post.content} />
-          <button onClick={() => sendChanges(post.id, inputRef.current.value)} className="post__save"><Link to='../ra-router-crud/'>Сохранить</Link></button>
+          <button onClick={() => sendChanges(post.id, inputRef.current.value)} className="post__save"><Link to='../'>Сохранить</Link></button>
         </React.Fragment>
       ) : (
         <div className='post__content'>{props.content}</div>
