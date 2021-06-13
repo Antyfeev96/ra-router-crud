@@ -14,6 +14,7 @@ export default class API {
   }
 
   async addMessage(id, content) {
+    if (content === '') return;
     try {
       await fetch(`${this.url}/posts`, {
         method: 'POST',
@@ -33,6 +34,21 @@ export default class API {
         method: 'DELETE',
         body: JSON.stringify({
           id,
+        })
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async updateMessage(id, content) {
+    if (content === '') return;
+    try {
+      await fetch(`${this.url}/posts`, {
+        method: 'POST',
+        body: JSON.stringify({
+          id,
+          content,
         })
       });
     } catch (error) {

@@ -1,6 +1,6 @@
 import './Posts.scss'
 import React, { useContext } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Post from '../Post/Post'
 import PostsContext from '../PostsContext/PostsContext';
 

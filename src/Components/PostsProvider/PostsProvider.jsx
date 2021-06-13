@@ -7,14 +7,14 @@ const api = new API();
 function PostsProvider(props) {
   const [data, setData] = useState({
     posts: [],
-    nextId: null,
+    nextId: 0,
   });
 
   const fetchPosts = async () => {
     const posts = await api.read();
     setData(() => ({
       posts: posts,
-      nextId: posts.length + 1,
+      nextId: data.nextId++,
     }))
   }
 
