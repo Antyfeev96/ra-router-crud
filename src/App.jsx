@@ -13,10 +13,10 @@ export default function App() {
       <Router>
         <div className='app'>
           <Switch>
-            <Route path='/posts/new' exact component={NewPostWindow} />
-            <Route path='/edit/:id' exact component={Post} />
-            <Route path='/posts/:id' exact component={PostView} />
-            <Route path='/' exact component={HomePage} />
+            <Route path='/ra-router-crud/posts/new' exact component={NewPostWindow} />
+            <Route path='/ra-router-crud/edit/:id' exact component={Post} />
+            <Route path='/ra-router-crud/posts/:id' exact component={PostView} />
+            <Route path='/ra-router-crud/' exact component={HomePage} />
           </Switch>
         </div>
       </Router>
