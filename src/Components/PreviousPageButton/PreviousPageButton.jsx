@@ -5,10 +5,8 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function PreviousPageButton() {
   return (
-    <React.Fragment>
       <Link to='../'>
         <FontAwesomeIcon icon={faTimes} size='2x' />
       </Link>
-    </React.Fragment>
   );
 }

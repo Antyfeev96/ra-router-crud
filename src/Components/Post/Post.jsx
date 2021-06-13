@@ -9,9 +9,11 @@ export default function Post(props) {
   return (
     <div className="post">
       <header className="post__header">
-        <FontAwesomeIcon icon={faSmile} size='4x' />
-        <div className="post__username">Володька</div>
-        <div className="post__created">{props.created}</div>
+        <div className="post__data">
+          <FontAwesomeIcon icon={faSmile} size='4x' />
+          <div className="post__username">Володька</div>
+          <div className="post__created">{props.created}</div>
+        </div>
         {props.children}
       </header>
       <div className="post__content">{props.content}</div>
